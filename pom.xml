@@ -19,6 +19,7 @@
     <modules>
         <module>common-app</module>
         <module>eureka-server</module>
+        <module>eureka-server-ha</module>
         <module>spring-boot-quickstart</module>
         <module>spring-boot-quickstart-consumer</module>
     </modules>
