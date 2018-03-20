@@ -16,10 +16,13 @@ eureka:
   instance:
     hostname: peer1 #指定当profile=peer1时，主机名是peer1
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    register-with-eureka: false
+#    registerWithEureka: false
+    fetch-registry: false
+#    fetchRegistry: false
     service-url:
-      defaultZone: http://peer2:8762/eureka,http://peer3:8763/eureka
+      defaultZone: http://admin:fangming@peer2:8762/eureka,http://admin:fangming@peer3:8763/eureka
+
 ---
 spring:
   profiles: peer2
@@ -29,10 +32,12 @@ eureka:
   instance:
     hostname: peer2 #指定当profile=peer2时，主机名是peer2
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    register-with-eureka: false
+#    registerWithEureka: false
+    fetch-registry: false
+#    fetchRegistry: false
     service-url:
-      defaultZone: http://peer1:8761/eureka,http://peer3:8763/eureka
+      defaultZone: http://admin:fangming@peer1:8761/eureka,http://admin:fangming@peer3:8763/eureka
 ---
 spring:
   profiles: peer3
@@ -42,7 +47,9 @@ eureka:
   instance:
     hostname: peer3 #指定当profile=peer2时，主机名是peer2
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    register-with-eureka: false
+#    registerWithEureka: false
+    fetch-registry: false
+#    fetchRegistry: false
     service-url:
-      defaultZone: http://peer1:8761/eureka,http://peer2:8762/eureka
+      defaultZone: http://admin:fangming@peer1:8761/eureka,http://admin:fangming@peer2:8762/eureka
