@@ -3,7 +3,11 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://admin:fangming@localhost:8761/eureka  #注册 中心已经开启认证
+      ##在单独的eureka服务器上注册
+      #defaultZone: http://admin:fangming@localhost:8761/eureka
+
+      ##在高可用eureka集群服务器上注册
+      defaultZone: http://admin:fangming@peer1:8761/eureka,http://admin:fangming@peer2:8762/eureka,http://admin:fangming@peer3:8763/eureka  #注册 中心已经开启认证
   instance:
     prefer-ip-address: true
     instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}

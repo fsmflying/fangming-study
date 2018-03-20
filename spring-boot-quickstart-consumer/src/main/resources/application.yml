@@ -1,8 +1,17 @@
 server:
   port: 9091
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:fangming@localhost:8761/eureka  #注册 中心已经开启认证
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
 user:
   userServiceUrl: http://localhost:9090/user/{id}
-#spring:
+spring:
+  application:
+    name: spring-boot-quickstart-consumer
 #  jpa:
 #    generate-ddl: false
 #    show-sql: true
